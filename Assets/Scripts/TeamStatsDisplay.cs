@@ -21,8 +21,43 @@ public class TeamStatsDisplay : MonoBehaviour
     public TextMeshProUGUI fansText;
     public TextMeshProUGUI wealthText;
 
+    int startPerformance;
+    int startMorale;
+    int startFans;
+    long startWealth;
+
+    void Awake()
+    {
+        RememberStart();
+    }
+
     void Start()
     {
+        Refresh();
+    }
+
+    public void RememberStart()
+    {
+        startPerformance = performance;
+        startMorale = morale;
+        startFans = fans;
+        startWealth = wealth;
+    }
+
+    public void RestoreStart()
+    {
+        performance = startPerformance;
+        morale = startMorale;
+        fans = startFans;
+        wealth = startWealth;
+    }
+
+    public void Apply(StatChange change)
+    {
+        performance += change.performance;
+        morale += change.morale;
+        fans += change.fans;
+        wealth += change.wealth;
         Refresh();
     }
 

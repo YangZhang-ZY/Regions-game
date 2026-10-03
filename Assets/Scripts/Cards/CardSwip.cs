@@ -21,6 +21,8 @@ public class CardSwip : MonoBehaviour
 
     public Action<bool> OnSwiped;
 
+    public float DragAmount { get; private set; }
+
     const float CenterDeadZone = 0.12f;
 
     RectTransform rect;
@@ -68,6 +70,7 @@ public class CardSwip : MonoBehaviour
         float limit = OffsetLimit();
         float offset = Mathf.Clamp(anchored.x - homePosition.x, -limit, limit);
         float amount = offset / limit;
+        DragAmount = amount;
 
         Vector2 targetPosition = new Vector2(homePosition.x + offset, homePosition.y);
         float targetAngle = -amount * maxRotation;
@@ -139,6 +142,7 @@ public class CardSwip : MonoBehaviour
     IEnumerator Fly(bool toRight)
     {
         busy = true;
+        DragAmount = toRight ? 1f : -1f;
         Vector2 from = rect.anchoredPosition;
         float targetX = toRight ? 1800f : -1800f;
         Vector2 to = new Vector2(targetX, from.y + 40f);
@@ -159,6 +163,7 @@ public class CardSwip : MonoBehaviour
     {
         StopAllCoroutines();
         busy = false;
+        DragAmount = 0f;
         followVelocity = Vector2.zero;
         followAngleVelocity = 0f;
 

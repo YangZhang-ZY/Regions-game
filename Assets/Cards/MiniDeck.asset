@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e20f545c44123e42b456d5835cf2218, type: 3}
+  m_Name: MiniDeck
+  m_EditorClassIdentifier: Assembly-CSharp::SeasonDeck
+  cards:
+  - {fileID: 11400000, guid: 6ca957324c6748945b651c808766dbde, type: 2}
+  - {fileID: 11400000, guid: 2f018ecf8029e3340a21b133788e5833, type: 2}
+  - {fileID: 11400000, guid: cf84a6295a681b044b45c49e0aa6d605, type: 2}
+  - {fileID: 11400000, guid: 6c3640ba4f115b14caa0232026213c00, type: 2}
+  - {fileID: 11400000, guid: 353f3cdb5dcac704393cec04bfef63bc, type: 2}
+  - {fileID: 11400000, guid: 6ae77f8f067c77a49bc92ce6366e267b, type: 2}
+  - {fileID: 11400000, guid: c6b78a5a7016b5f419130f64da7f80b1, type: 2}
+  - {fileID: 11400000, guid: 6f487d755606d7d4eb19cef50d1c3a38, type: 2}
+  - {fileID: 11400000, guid: 6156d9ba17f620b47a4682e34ebf751b, type: 2}
+  - {fileID: 11400000, guid: bbb26351e5490c8489c26dfff3998b6c, type: 2}
