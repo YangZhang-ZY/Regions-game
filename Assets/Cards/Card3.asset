@@ -16,17 +16,17 @@ MonoBehaviour:
   art: {fileID: 0}
   question: Playoff home tickets go on sale tomorrow. The good seats are fixed, and
     scalpers are already waiting outside. How do you price them?
-  leftChoice: Left
-  rightChoice: Right
+  leftChoice: Raise the price
+  rightChoice: Cut the price
   leftEffect:
     performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    morale: -4
+    fans: -12
+    wealth: 350000
   rightEffect:
     performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    morale: 4
+    fans: 8
+    wealth: 80000
   leftResult: 
   rightResult: 

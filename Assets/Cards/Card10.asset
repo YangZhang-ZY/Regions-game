@@ -17,17 +17,17 @@ MonoBehaviour:
   question: The season produced a profit. Some owners want it paid out now, so the
     books tell a clean story. The general manager wants it left in the academy and
     the analytics group.
-  leftChoice: Left
-  rightChoice: Right
+  leftChoice: Pay the owners
+  rightChoice: Keep it in the club
   leftEffect:
     performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    morale: -6
+    fans: -4
+    wealth: 200000
   rightEffect:
-    performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    performance: 10
+    morale: 6
+    fans: 4
+    wealth: -150000
   leftResult: 
   rightResult: 

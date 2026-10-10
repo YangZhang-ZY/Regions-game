@@ -19,11 +19,20 @@ public class CardSwip : MonoBehaviour
     [Tooltip("点击后卡片飞出屏幕的速度。数值越大飞得越快。")]
     public float flySpeed = 8000f;
 
+    [Tooltip("向左或向右确认甩出时播放一次，只播放前 0.9 秒。不指定则不播放。")]
+    public AudioClip swipeSound;
+
+    [Tooltip("确认甩出音效音量。")]
+    public float swipeSoundVolume = 1f;
+
     public Action<bool> OnSwiped;
+    public Action OnTrackingStarted;
 
     public float DragAmount { get; private set; }
+    public bool IsTracking => tracking;
 
     const float CenterDeadZone = 0.12f;
+    const float SwipeSoundSeconds = 0.9f;
 
     RectTransform rect;
     Canvas canvas;
@@ -31,6 +40,8 @@ public class CardSwip : MonoBehaviour
     Vector2 followVelocity;
     float followAngleVelocity;
     bool busy;
+    bool tracking;
+    AudioSource swipeSource;
 
     void Awake()
     {
@@ -52,12 +63,45 @@ public class CardSwip : MonoBehaviour
             return;
         }
 
-        FollowMouse(mouse.position.ReadValue());
+        Vector2 screenPosition = mouse.position.ReadValue();
+        if (!tracking)
+        {
+            if (mouse.leftButton.wasPressedThisFrame && ScreenPointInsideCard(screenPosition))
+            {
+                tracking = true;
+                OnTrackingStarted?.Invoke();
+            }
+
+            return;
+        }
+
+        FollowMouse(screenPosition);
 
         if (mouse.leftButton.wasPressedThisFrame)
         {
             TryCommit();
         }
+    }
+
+    public void StopTracking()
+    {
+        tracking = false;
+    }
+
+    bool ScreenPointInsideCard(Vector2 screenPosition)
+    {
+        if (rect == null)
+        {
+            return false;
+        }
+
+        Camera eventCamera = null;
+        if (canvas != null && canvas.renderMode != RenderMode.ScreenSpaceOverlay)
+        {
+            eventCamera = canvas.worldCamera;
+        }
+
+        return RectTransformUtility.RectangleContainsScreenPoint(rect, screenPosition, eventCamera);
     }
 
     void FollowMouse(Vector2 screenPosition)
@@ -100,7 +144,31 @@ public class CardSwip : MonoBehaviour
             return;
         }
 
+        PlaySwipeSound();
         StartCoroutine(Fly(offset > 0f));
+    }
+
+    void PlaySwipeSound()
+    {
+        if (swipeSound == null || swipeSoundVolume <= 0f)
+        {
+            return;
+        }
+
+        if (swipeSource == null)
+        {
+            swipeSource = gameObject.AddComponent<AudioSource>();
+            swipeSource.playOnAwake = false;
+            swipeSource.loop = false;
+            swipeSource.spatialBlend = 0f;
+        }
+
+        swipeSource.Stop();
+        swipeSource.clip = swipeSound;
+        swipeSource.volume = swipeSoundVolume;
+        swipeSource.time = 0f;
+        swipeSource.Play();
+        swipeSource.SetScheduledEndTime(AudioSettings.dspTime + SwipeSoundSeconds);
     }
 
     bool TryScreenToAnchored(Vector2 screenPosition, out Vector2 anchored)
@@ -157,6 +225,11 @@ public class CardSwip : MonoBehaviour
         rect.anchoredPosition = to;
         OnSwiped?.Invoke(toRight);
         busy = false;
+    }
+
+    public void SetHome(Vector2 position)
+    {
+        homePosition = position;
     }
 
     public void ResetToHome()

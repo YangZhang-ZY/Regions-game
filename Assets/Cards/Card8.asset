@@ -16,17 +16,17 @@ MonoBehaviour:
   art: {fileID: 0}
   question: The team already practices six days a week. The coach wants one more
     late tactics session. He says the details can still get a little sharper.
-  leftChoice: Left
-  rightChoice: Right
+  leftChoice: Add the late session
+  rightChoice: Send them home
   leftEffect:
-    performance: 0
-    morale: 0
+    performance: 8
+    morale: -14
     fans: 0
-    wealth: 0
+    wealth: -60000
   rightEffect:
-    performance: 0
-    morale: 0
-    fans: 0
+    performance: -2
+    morale: 8
+    fans: 2
     wealth: 0
   leftResult: 
   rightResult: 

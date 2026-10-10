@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: Card2
   m_EditorClassIdentifier: Assembly-CSharp::CardDefinition
   title: Event
-  art: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  art: {fileID: 21300000, guid: fd52bc41850f4aab873755fb3b0c6002, type: 3}
   question: The rookie needs a season promo. Do you sell him as an untouchable scorer,
     or as the guy who stops for photos with kids?
-  leftChoice: Left
-  rightChoice: Right
+  leftChoice: Sell him as a scorer
+  rightChoice: Film him with the kids
   leftEffect:
-    performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    performance: 8
+    morale: -8
+    fans: 10
+    wealth: 180000
   rightEffect:
-    performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    performance: -2
+    morale: 6
+    fans: 12
+    wealth: 50000
   leftResult: 
   rightResult: 

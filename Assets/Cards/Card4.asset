@@ -16,17 +16,17 @@ MonoBehaviour:
   art: {fileID: 0}
   question: The starting center aggravated an old ankle injury. His salary and the
     medical bills are already paid. Tonight is a must-win
-  leftChoice: Left
-  rightChoice: Right
+  leftChoice: Play him hurt
+  rightChoice: Hold him out
   leftEffect:
-    performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    performance: 6
+    morale: -12
+    fans: 4
+    wealth: -200000
   rightEffect:
-    performance: 0
-    morale: 0
-    fans: 0
+    performance: -10
+    morale: 6
+    fans: -8
     wealth: 0
   leftResult: 
   rightResult: 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Card1
   m_EditorClassIdentifier: Assembly-CSharp::CardDefinition
   title: Event
-  art: {fileID: 0}
+  art: {fileID: 21300000, guid: fd52bc41850f4aab873755fb3b0c6002, type: 3}
   question: There is only one training budget this week. The starting wing is cold,
     and the bench still needs real reps. Who gets the money
   leftChoice: Fund the starters

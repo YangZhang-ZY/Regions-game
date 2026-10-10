@@ -16,17 +16,17 @@ MonoBehaviour:
   art: {fileID: 0}
   question: ' Membership day needs one plan. Die-hard fans will pay for courtside
     and autographs. Most casual fans just want a half-price ticket.'
-  leftChoice: Left
-  rightChoice: Right
+  leftChoice: Serve the die-hards
+  rightChoice: Half-price for everyone
   leftEffect:
-    performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    performance: 2
+    morale: 2
+    fans: -10
+    wealth: 240000
   rightEffect:
     performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    morale: 4
+    fans: 12
+    wealth: -120000
   leftResult: 
   rightResult: 

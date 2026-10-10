@@ -16,17 +16,17 @@ MonoBehaviour:
   art: {fileID: 0}
   question: A starter shoved a referee, and the clip is everywhere. A sponsor calls
     and asks which side the club is on.
-  leftChoice: Left
-  rightChoice: Right
+  leftChoice: Back the player
+  rightChoice: Suspend him and keep the sponsor
   leftEffect:
     performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    morale: 10
+    fans: -6
+    wealth: -220000
   rightEffect:
-    performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    performance: -4
+    morale: -8
+    fans: 4
+    wealth: 250000
   leftResult: 
   rightResult: 

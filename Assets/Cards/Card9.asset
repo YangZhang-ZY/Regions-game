@@ -16,17 +16,17 @@ MonoBehaviour:
   art: {fileID: 0}
   question: A title rival has opened the vault for the same wing on the market. Your
     academy has a similar prospect who still needs two years.
-  leftChoice: Left
-  rightChoice: Right
+  leftChoice: Buy the wing
+  rightChoice: Trust the academy
   leftEffect:
-    performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    performance: 14
+    morale: -12
+    fans: 8
+    wealth: -400000
   rightEffect:
-    performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    performance: 4
+    morale: 6
+    fans: 2
+    wealth: -80000
   leftResult: 
   rightResult: 

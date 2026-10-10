@@ -17,17 +17,17 @@ MonoBehaviour:
   question: Two deals are on the table. A fast-food brand will pay a lot for a spot
     that cuts against the team persona. A sports brand will pay half, and the ad
     actually fits.
-  leftChoice: Left
-  rightChoice: Right
+  leftChoice: Take the fast-food deal
+  rightChoice: Take the sportswear deal
   leftEffect:
     performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    morale: -8
+    fans: -14
+    wealth: 400000
   rightEffect:
-    performance: 0
-    morale: 0
-    fans: 0
-    wealth: 0
+    performance: 2
+    morale: 6
+    fans: 8
+    wealth: 160000
   leftResult: 
   rightResult: 
