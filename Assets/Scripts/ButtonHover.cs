@@ -4,22 +4,22 @@ using UnityEngine.EventSystems;
 
 public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    [Tooltip("指针停在按钮上时的缩放。1 是原来的大小。")]
+    [Tooltip("指针停在按钮上时的缩放是原来的大小。")]
     public float hoverScale = 1.08f;
 
-    [Tooltip("放大和文字变色所用的秒数。")]
+    [Tooltip("放大和文字变色所用的秒数")]
     public float duration = 0.12f;
 
-    [Tooltip("指针进入按钮时播放一次。不指定则不播放。")]
+    [Tooltip("指针进入按钮时播放一次不指定则不播放")]
     public AudioClip hoverSound;
 
-    [Tooltip("悬停音效音量。")]
+    [Tooltip("悬停音效音量")]
     public float hoverSoundVolume = 1f;
 
-    [Tooltip("点击按钮时播放一次。不指定则不播放。")]
+    [Tooltip("点击按钮时播放一次不指定则不播放")]
     public AudioClip clickSound;
 
-    [Tooltip("点击音效音量。")]
+    [Tooltip("点击音效音量")]
     public float clickSoundVolume = 1f;
 
     static readonly Color HoverGold = new Color(226f / 255f, 197f / 255f, 107f / 255f, 1f);
